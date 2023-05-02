@@ -83,5 +83,25 @@ public class Ledger {
             );
         }
     }
-}
 
+    public static void showDeposits() {
+        System.out.println("All Entries");
+        for (Transaction item : transactions) {
+            System.out.println(
+                    item.getDate() + " " +
+                            item.getDescription() + " " +
+                            item.getVendor() + " " +
+                            item.getAmount()
+            );
+        }
+    }
+
+
+
+        }
+
+    }
+
+
+    }
+}
