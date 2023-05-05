@@ -17,7 +17,7 @@ public class Transaction {
         this.vendor = vendor;
         this.amount = amount;
     }
-
+//Getter and setter Method
     public LocalDate getDate() {
         return date;
     }

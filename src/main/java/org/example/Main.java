@@ -2,36 +2,48 @@ package org.example;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalTime;
 import java.util.Scanner;
 import java.time.LocalDate;
 
 
 public class Main {
     public static void main(String[] args) {
-        homescreen();
+        // Calls the getTransactions method from the LedgerScreen class
+        LedgerScreen.getTransactions();
+        showHomescreen();
+
     }
 
-    public static void homescreen() {
+    public static void  showHomescreen() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to your Account Ledger!\n"+
-                "Main Menu:\n" +
-                "[D]- add Deposit\n" +
-                "[P]- Make Payment\n" +
-                "[L]-Ledger\n" +
-                "[X]- Exit");
-        String input = scanner.nextLine();
-        switch (input.toUpperCase()) {
-            case "D":
-                addDeposit();
-                break;
-            case "P":
-                makePayment();
-                break;
-            case "X":
-                System.exit(0);
-            default:
-                System.out.println("please enter a valid option");
-                break;
+        while (true) {
+            System.out.println("""
+                                    ~~Welcome to your Homescreen!~~ 
+                         Main Menu        
+                    [D]~~~ add Deposit
+                    [P]~~~ Make Payment
+                    [L]~~~ Ledger
+                    [X]~~~ Exit"""
+            );
+            String input = scanner.nextLine();
+            switch (input.toUpperCase()) {
+                case "D":
+                    addDeposit();
+                    break;
+                case "P":
+                    makePayment();
+                    break;
+                case "L":
+                    LedgerScreen.showLedger();
+                    break;
+                case "X":
+                    System.exit(0);
+                default:
+                    System.out.println("please enter a valid option");
+                    break;
+
+            }
         }
 
     }
@@ -40,29 +52,35 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Date: YYYY-MM-DD");
         String date = scanner.nextLine();
-        System.out.println("Enter Time : HH:MM;SS");
+        System.out.println("Enter Time : HH:MM:SS");
         String time = scanner.nextLine();
         System.out.println("Enter Description");
         String description = scanner.nextLine();
-        System.out.println("Enter Vendor");
+        System.out.println("Vendor");
         String vendor = scanner.nextLine();
         System.out.println("Enter Transaction Amount");
-        double amount = scanner.nextDouble();
+        double amount = scanner.nextDouble();//Storing the amount as Double
 
-        try (FileWriter fileWriter = new FileWriter("Trancastions.csv", true)) {
+        //using the filewriter to add collected data to the csv file
+        try (FileWriter fileWriter = new FileWriter("Transactions.csv", true)) {
             fileWriter.write("\n" +
                     date + "|" +
                     time + "|" +
                     description + "|" +
-                    vendor + "|" + "-" +
+                    vendor + "|" + "+" +
                     amount
             );
-            fileWriter.close();
+            // Creating new LocalDate and LocalTime objects to store the transaction date and time respectively
+            LocalDate ldate = LocalDate.parse(date);
+            LocalTime ltime = LocalTime.parse(time);
+            // Creating a new Transaction object to store the transaction details
+            Transaction t = new Transaction(ldate, ltime, description,vendor, amount);
+            LedgerScreen.transactions.add (t);
             System.out.println("Deposit Added successfully!");
         } catch (IOException e) {
             System.out.println("Error inputting data!");
         }
-        homescreen();
+        //showHomescreen();
     }
 
 
@@ -70,7 +88,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Date: YYYY-MM-DD");
         String date = scanner.nextLine();
-        System.out.println("Enter Time : HH:MM;SS");
+        System.out.println("Enter Time : HH:MM:SS");
         String time = scanner.nextLine();
         System.out.println("Enter Description");
         String description = scanner.nextLine();
@@ -79,27 +97,40 @@ public class Main {
         System.out.println("Enter Transaction Amount");
         double amount = scanner.nextDouble();
 
-        try (FileWriter fileWriter = new FileWriter("Trancastions.csv", true)) {
+        try (FileWriter fileWriter = new FileWriter("Transactions.csv", true)) {
             fileWriter.write("\n" +
                     date + "|" +
                     time + "|" +
                     description + "|" +
                     vendor + "|" + "-" +
                     amount
+
             );
-            fileWriter.close();
-            System.out.println("Payment Added successfully!");
+            LocalDate ldate = LocalDate.parse(date);
+            LocalTime ltime = LocalTime.parse(time);
+            Transaction t = new Transaction(ldate, ltime, description,vendor, amount);
+            LedgerScreen.transactions.add (t);
+            System.out.println("Your Payment was successfully!");
         } catch (IOException e) {
             System.out.println("Error inputting data!");
         }
-        homescreen();
+        //showHomescreen();
     }
 
-    public static void showLedger(){
-        Ledger.showLedger();
-
+    public static void showLedger() {
+        LedgerScreen.showLedger();
+        return;
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 

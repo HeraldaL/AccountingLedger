@@ -1,14 +1,14 @@
 2023-04-01|09:20:18|Organic avocado oil|Whole Foods Market|-17.85
 2023-04-01|12:45:30|Men's running shoes|Nike|-129.99
 2023-04-02|17:30:05|Bluetooth headphones|Best Buy|-79.99
-2023-04-03|08:15:40|Yoga mat|Lululemon|-68.00
+2023-04-03|08:15:40|Yoga mat|Lululemon|68.00
 2023-04-04|13:10:15|Protein powder|GNC|-34.99
 2023-04-04|15:20:30|Women's sunglasses|Ray-Ban|-169.00
 2023-04-05|11:05:45|Office chair|Staples|-149.99
-2023-04-05|14:40:10|Fitness tracker|Fitbit|-99.95
+2023-04-05|14:40:10|Fitness tracker|Fitbit|99.95
 2023-04-06|10:30:00|Smart thermostat|Amazon|-179.99
 2023-04-07|16:20:15|Electric kettle|Bed Bath & Beyond|-39.99
-2023-04-07|18:45:20|Protein bars|Amazon|-29.99
+2023-04-07|18:45:20|Protein bars|Amazon|29.99
 2023-04-08|12:10:30|Running shorts|Under Armour|-49.99
 2023-04-08|14:55:15|Wireless charger|Apple Store|-59.00
 2023-04-09|09:15:45|Air purifier|Home Depot|-199.00
@@ -22,7 +22,23 @@
 2023-04-14|08:30:10|Electric toothbrush|Target|-59.99
 2023-04-14|11:20:00|Running socks|Dick's Sporting Goods|-14.99
 2023-04-15|13:25:30|Smart speaker|Best Buy|-99.99
-2023-04-16|15:50:45|Wireless keyboard|Staples|-49.99
-
-2023-5-1|9:47|zelle|someone|-12.0
-2023-05-01|9:49|pay|someone|-90.0
+2023-04-16|15:50:45|Wireless keyboard|Staples|49.99
+2023-05-01|09:47:45|zelle|someone|-12.0
+2023-05-01|09:49:10|pay|someone|-90.0
+2023-05-02|02:22:23|Zelle payment|Store|-20.0
+2023-05-02|04:00:25|Purchase|Store|-30.0
+2021-05-01|05:24:10|Payment|Store|-40.0
+2022-12-29|05:30:10|Purcharse|store|-70.0
+2023-05-01|05:23:10|Payment|Store|+40.0
+2022-10-23|08:50:25|Ice Cream Store|Baskin-Robins|-10.0
+2022-09-13|08:45:36|New Shirts|Boutique|-30.0
+2022-10-05|10:43:45|payment|RMS|+50.00
+2023-04-10|11:45:20|new table|Ikea|-60.00
+2020-12-12|08:12:22|DEPOSIT|Mom|+5.0
+2023-05-04|12:00:00|Trasnfer for Lunch Bill|Friend|-12.0
+2022-10-22|10:20:10|Payment|Mon|+20.0
+2023-05-05|12:22:34|Vast inheritance|Uncle Bob|+12.34
+2023-05-06|10:00:23|More money|Dad|+10.0
+2022-10-10|12:20:12|Payment|sister|+30.0
+2022-10-20|10:10:10|Payment|Applebee's|-30.0
+2022-10-10|10:12:10|Payment|Applebee's|-30.0
